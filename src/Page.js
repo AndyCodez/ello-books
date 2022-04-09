@@ -9,6 +9,7 @@ const Page = ({page, setToken}) => {
                 </span>
                 })
             }
+            <div className="pageNumber text-center">{page.pageIndex+1}</div>
         </div>
     );
 };
