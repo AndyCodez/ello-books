@@ -46,7 +46,7 @@ const Book = () => {
                         <p>Author: {book.author} </p>
                     </div>
 
-                    <div className="flex-container-row">
+                    <div className="flex-container">
                         <Page page={book.pages[pageIndex]} setToken={setToken}/>
                         <Page page={book.pages[pageIndex+1]} setToken={setToken}/>
                     </div>

@@ -1,7 +1,6 @@
 $primary: #73CBCC;
 
 * {
-    margin: 0;
     box-sizing: border-box;
 }
 
@@ -9,14 +8,20 @@ $primary: #73CBCC;
     text-align: center;
 }
 
-.flex-container-row {
+.flex-container {
     display: flex;
     flex-direction: row;
 }
 
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
 .Page {
     border: 1px solid $primary;
-    width: 50%;
+    flex: 50%;
     min-height: 50vh;
     padding: 5px;
     position: relative;
