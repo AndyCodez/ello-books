@@ -30,3 +30,32 @@ $primary: #73CBCC;
         font-size: 16px;
     }
 }
+
+.Nav {
+    margin: 20px;
+}
+
+button {
+    background-color: $primary;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 150px;
+
+    &:hover {
+        background-color: aqua;
+        color: gray;
+        cursor: pointer;
+    }
+
+    &:disabled {
+        background-color: grey;
+        &:hover {
+            color: white;
+        }
+    }
+  }

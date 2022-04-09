@@ -1,7 +1,7 @@
 const Nav = ({ book, pageIndex, offset, setPageIndex }) => {
 
     return(
-        <div className="Nav">
+        <div className="Nav text-center">
             <button
                 onClick={()=>{setPageIndex(pageIndex-2)}}
                 disabled={ pageIndex === 0 }
