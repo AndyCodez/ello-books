@@ -2,6 +2,7 @@ import ello from "./ello";
 import { useEffect, useState } from "react";
 import query from './Query';
 import Page from "./Page";
+import Nav from "./Nav";
 
 const Book = () => {
     const [book, setBook] = useState({});
@@ -24,28 +25,34 @@ const Book = () => {
 
     const bookPresent = Object.keys(book).length > 0;
 
+    let pageOffset = 1;
+    if (bookPresent) {
+        if (book.pages.length % 2 === 0) {
+            pageOffset = 2;
+        }
+    }
+
     return (
-        <div className="Book">
-            {bookPresent ? (
-                token ? ("token set: " + token): (
-                    <>
-                        <div>
-                            <h1>
-                                Ello Technology
-                            </h1>
+        bookPresent ? (
+            token ? ("token set: " + token): (
+                <div className="Book">
+                    <div>
+                        <h1>
+                            Ello Technology
+                        </h1>
 
-                            <p>Book title: {book.title} </p>
-                            <p>Author: {book.author} </p>
-                        </div>
+                        <p>Book title: {book.title} </p>
+                        <p>Author: {book.author} </p>
+                    </div>
 
-                        <div>
-                            <Page page={book.pages[pageIndex]} setToken={setToken}/>
-                            <Page page={book.pages[pageIndex+1]} setToken={setToken}/>
-                        </div>
-                    </>
-                )
-            ) : ("loading...")}
-        </div>
+                    <div>
+                        <Page page={book.pages[pageIndex]} setToken={setToken}/>
+                        <Page page={book.pages[pageIndex+1]} setToken={setToken}/>
+                    </div>
+                    <Nav book={book} pageIndex={pageIndex} offset={pageOffset} setPageIndex={setPageIndex}/>
+                </div>
+            )
+        ) : ("loading...")
     );
 };
 
