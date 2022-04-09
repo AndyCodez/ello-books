@@ -42,7 +42,9 @@ const Book = () => {
 
                     <div className="flex-container">
                         <Page page={book.pages[pageIndex]} setToken={setToken}/>
-                        <Page page={book.pages[pageIndex+1]} setToken={setToken}/>
+                        {
+                            (pageIndex + 1) < book.pages.length && <Page page={book.pages[pageIndex+1]} setToken={setToken}/> 
+                        }
                     </div>
                     <Nav book={book} pageIndex={pageIndex} offset={pageOffset} setPageIndex={setPageIndex}/>
                 </div>
