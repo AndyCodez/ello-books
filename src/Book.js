@@ -37,7 +37,7 @@ const Book = () => {
         bookPresent ? (
             token ? (<Token value={token} setToken={setToken}/>): (
                 <div className="Book">
-                    <div>
+                    <div className="text-center">
                         <h1>
                             Ello Technology
                         </h1>
@@ -46,7 +46,7 @@ const Book = () => {
                         <p>Author: {book.author} </p>
                     </div>
 
-                    <div>
+                    <div className="flex-container-row">
                         <Page page={book.pages[pageIndex]} setToken={setToken}/>
                         <Page page={book.pages[pageIndex+1]} setToken={setToken}/>
                     </div>

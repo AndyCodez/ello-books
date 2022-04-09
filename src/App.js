@@ -1,4 +1,5 @@
 import Book from "./Book";
+import './custom.scss';
 
 function App() {
   return (
