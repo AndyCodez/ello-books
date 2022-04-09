@@ -4,6 +4,7 @@ import query from './Query';
 import Page from "./Page";
 import Nav from "./Nav";
 import Token from "./Token";
+import BookDetails from "./BookDetails";
 
 const Book = () => {
     const [book, setBook] = useState({});
@@ -37,14 +38,7 @@ const Book = () => {
         bookPresent ? (
             token ? (<Token value={token} setToken={setToken}/>): (
                 <div className="Book">
-                    <div className="text-center">
-                        <h1>
-                            Ello Technology
-                        </h1>
-
-                        <p>Book title: {book.title} </p>
-                        <p>Author: {book.author} </p>
-                    </div>
+                    <BookDetails book={book}/>
 
                     <div className="flex-container">
                         <Page page={book.pages[pageIndex]} setToken={setToken}/>
