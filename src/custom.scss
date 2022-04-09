@@ -55,6 +55,7 @@ button {
     &:disabled {
         background-color: grey;
         &:hover {
+            cursor: default;
             color: white;
         }
     }
