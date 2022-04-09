@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import query from './Query';
 import Page from "./Page";
 import Nav from "./Nav";
+import Token from "./Token";
 
 const Book = () => {
     const [book, setBook] = useState({});
@@ -34,7 +35,7 @@ const Book = () => {
 
     return (
         bookPresent ? (
-            token ? ("token set: " + token): (
+            token ? (<Token value={token} setToken={setToken}/>): (
                 <div className="Book">
                     <div>
                         <h1>
